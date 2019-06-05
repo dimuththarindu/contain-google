@@ -280,6 +280,16 @@ function shouldContainInto (url, tab) {
     // we only handle URLs starting with http(s)
     return false;
   }
+  
+  if (url.startsWith("https://mail.google.com/")) {
+    // Ignore Gmail
+    return false;
+  }
+  
+  if (url.startsWith("https://accounts.google.com")) {
+    // Ignore sign in process
+    return false;
+  }
 
   let handleUrl = isGoogleURL(url);
 
