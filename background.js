@@ -281,13 +281,15 @@ function shouldContainInto (url, tab) {
     return false;
   }
   
-  if (url.startsWith("https://mail.google.com/")) {
+if (url.startsWith("https://accounts.youtube.com")) 
+	|| (url.startsWith("https://myactivity.google.com")) 
+	|| (url.startsWith("https://history.google.com"))
+	|| (url.startsWith("https://myaccount.google.com"))
+	|| (url.startsWith("https://accounts.google.com")) 
+	|| (url.startsWith("https://mail.google.com")) {
     // Ignore Gmail
-    return false;
-  }
-  
-  if (url.startsWith("https://accounts.google.com")) {
-    // Ignore sign in process
+	// Ignore sign in process
+	// Ignore YouTube signing process
     return false;
   }
 
