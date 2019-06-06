@@ -280,19 +280,22 @@ function shouldContainInto (url, tab) {
     // we only handle URLs starting with http(s)
     return false;
   }
-  
-if ((url.startsWith("https://accounts.youtube.com")) 
-	|| (url.startsWith("https://myactivity.google.com")) 
-	|| (url.startsWith("https://history.google.com"))
-	|| (url.startsWith("https://myaccount.google.com"))
-	|| (url.startsWith("https://accounts.google.com")) 
-	|| (url.startsWith("https://mail.google.com"))) {
+ 
+  if ( (url.startsWith("https://accounts.google.com"))
+	||(url.startsWith("https://accounts.google.lk"))
+	||(url.startsWith("https://accounts.youtube.com"))
+	||(url.startsWith("https://contacts.google.com"))
+	||(url.startsWith("https://history.google.com"))
+	||(url.startsWith("https://mail.google.com"))
+	||(url.startsWith("https://myaccount.google.com"))
+	||(url.startsWith("https://myactivity.google.com"))
+	||(url.startsWith("https://www.google.com/intl/si/")) ) {
     // Ignore Gmail
-	// Ignore sign in process
-	// Ignore YouTube signing process
+	// Ignore Google sign in process
+	// Ignore YouTube sign in process
     return false;
   }
-
+  
   let handleUrl = isGoogleURL(url);
 
   if (handleUrl && extensionSettings.ignore_youtube && isYouTubeURL(url)) {
