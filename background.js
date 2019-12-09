@@ -309,7 +309,7 @@ function shouldContainInto (url, tab) {
     return false;
   }
   
-  if(customExceptionList(url.startsWith) {
+  if(customExceptionList(url.startsWith)) {
 	  return false;
   }
 
