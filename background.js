@@ -36,7 +36,7 @@ const AD_DOMAINS = [
 ];
 
 const DEVELOPER_DOMAINS = [
-  "madewithcode.com", "design.google", "gallery.io", "domains.google", "material.io", "android.com", "chromium.org", "cobrasearch.com", "chromecast.com", "chrome.com", "chromebook.com", "madewithcode.com", "whatbrowser.org", "withgoogle.com", "web.dev",
+  "madewithcode.com", "design.google", "wellbeing.google", "gallery.io", "domains.google", "material.io", "getmdl.io", "android.com", "chromium.org", "cobrasearch.com", "chromecast.com", "chrome.com", "chromebook.com", "madewithcode.com", "whatbrowser.org", "withgoogle.com", "web.dev",
 ];
 
 GOOGLE_DOMAINS = GOOGLE_DOMAINS.concat(GOOGLE_INTL_DOMAINS)
@@ -234,10 +234,14 @@ function reopenTab ({url, tab, cookieStoreId}) {
     url,
     cookieStoreId,
     active: tab.active,
-    index: tab.index,
+    index: tab.index + 1,
     windowId: tab.windowId
   });
-  browser.tabs.remove(tab.id);
+  // We do not want to erase google container if going from 
+  // google container back to default.
+  if (!(isSearchPageURL(tab.url))) {
+    browser.tabs.remove(tab.id);
+  }
 }
 
 function isGoogleURL (url) {
