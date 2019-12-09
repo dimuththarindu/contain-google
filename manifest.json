@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Google Container",
+    "name": "Google Container EL",
     "version": "1.4.0.3",
 
     "description": "Google Container isolates your Google activity from the rest of your web activity in order to prevent Google from tracking you outside of the Google website via third party cookies.",
@@ -12,7 +12,7 @@
 
     "applications": {
       "gecko": {
-        "id": "@contain-google-altered",
+        "id": "@contain-google-el",
         "strict_min_version": "57.0"
       }
     },
