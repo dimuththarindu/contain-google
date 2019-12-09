@@ -289,7 +289,11 @@ function shouldContainInto (url, tab) {
 	||(url.startsWith("https://mail.google.com"))
 	||(url.startsWith("https://myaccount.google.com"))
 	||(url.startsWith("https://myactivity.google.com"))
-	||(url.startsWith("https://www.google.com/intl/si/")) ) {
+	||(url.startsWith("https://www.google.com/intl/si/"))
+	||(url.startsWith("https://www.google.com/maps"))
+	||(url.startsWith("https://www.google.lk/maps"))
+	||(url.startsWith("https://www.google.com/drive/"))
+	||(url.startsWith("https://drive.google.com")) ) {
     // Ignore Gmail
 	// Ignore Google sign in process
 	// Ignore YouTube sign in process
