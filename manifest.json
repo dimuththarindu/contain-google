@@ -1,12 +1,7 @@
 {
     "manifest_version": 2,
-<<<<<<< HEAD
-    "name": "Google Container EL",
-    "version": "1.4.0.4",
-=======
-    "name": "Google Container",
-    "version": "1.5.0",
->>>>>>> 09ab9537a99768314e86dc28ced6d258be16a0cf
+    "name": "Google Container with Exception List",
+    "version": "1.5.0.5",
 
     "description": "Google Container isolates your Google activity from the rest of your web activity in order to prevent Google from tracking you outside of the Google website via third party cookies.",
 

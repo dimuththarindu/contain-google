@@ -279,31 +279,40 @@ function isFlightsURL (url) {
   return parsedUrl.pathname.startsWith('/flights');
 }
 
+
+function customExceptionList(url) {
+
+	var cel = [];
+	cel[0] = "https://accounts.google.com";
+	cel[1] = "https://accounts.google.lk";
+	cel[2] = "https://accounts.youtube.com";
+	cel[3] = "https://contacts.google.com";
+	cel[4] = "https://history.google.com";
+	cel[5] = "https://mail.google.com";
+	cel[6] = "https://myaccount.google.com";
+	cel[7] = "https://myactivity.google.com";
+	cel[8] = "https://www.google.com/intl/si/";
+	cel[9] = "https://www.google.com/maps";
+	cel[10] = "https://www.google.lk/maps";
+	cel[11] = "https://www.google.com/drive/";
+	cel[12] = "https://drive.google.com";
+	
+	if(cel.includes(url)) {
+		return true;
+	}
+	return false;
+}
+
 function shouldContainInto (url, tab) {
   if (!url.startsWith("http")) {
     // we only handle URLs starting with http(s)
     return false;
   }
- 
-  if ( (url.startsWith("https://accounts.google.com"))
-	||(url.startsWith("https://accounts.google.lk"))
-	||(url.startsWith("https://accounts.youtube.com"))
-	||(url.startsWith("https://contacts.google.com"))
-	||(url.startsWith("https://history.google.com"))
-	||(url.startsWith("https://mail.google.com"))
-	||(url.startsWith("https://myaccount.google.com"))
-	||(url.startsWith("https://myactivity.google.com"))
-	||(url.startsWith("https://www.google.com/intl/si/"))
-	||(url.startsWith("https://www.google.com/maps"))
-	||(url.startsWith("https://www.google.lk/maps"))
-	||(url.startsWith("https://www.google.com/drive/"))
-	||(url.startsWith("https://drive.google.com")) ) {
-    // Ignore Gmail
-	// Ignore Google sign in process
-	// Ignore YouTube sign in process
-    return false;
-  }
   
+  if(customExceptionList(url.startsWith) {
+	  return false;
+  }
+
   let handleUrl = isGoogleURL(url);
 
   if (handleUrl && extensionSettings.ignore_youtube && isYouTubeURL(url)) {
