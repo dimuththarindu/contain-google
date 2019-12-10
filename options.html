@@ -5,51 +5,71 @@
 <head>
 	<meta charset="utf-8">
 	<title>Google Container Preferences</title>
+	
+	<style>
+	div.brdr {
+		border-style: solid;
+		border-width: 1px;
+		border-color: #f0f0f5;
+		margin: 10px;
+		padding: 10px;
+		background: #f0f0f5;
+	}
+	
+	button.btn {
+		margin-top: 5px;
+		padding: 10px;
+	}
+	</style>
 </head>
 
 <body>
 	<form>
+		<div class="brdr">		
+			<p>
+				<label>
+					<input type="checkbox" id="ignore_youtube" value="1">
+					Ignore YouTube<br>
+					<em>(Means don't use Google Container for YouTube sites.)</em>
+				</label>
+			</p>
 
-		<h1>Settings</h1>
+			<p>
+				<label>
+					<input type="checkbox" id="ignore_searchpages" value="1">
+					Ignore search pages<br>
+					<em>(Means don't use Google Container on Google sites with a path of <code>/search</code>.)</em>
+				</label>
+			</p>
 
-		<hr>
+			<p>
+				<label>
+					<input type="checkbox" id="ignore_maps" value="1">
+					Ignore maps pages<br>
+					<em>(Means don't use Google Container on Google sites with a path of <code>/maps</code>.)</em>
+				</label>
+			</p>
 
-		<p>
-			<label>
-				<input type="checkbox" id="ignore_youtube" value="1">
-				Ignore YouTube<br>
-				<em>(Means don't use Google Container for YouTube sites.)</em>
-			</label>
-		</p>
+			<p>
+				<label>
+					<input type="checkbox" id="ignore_flights" value="1">
+					Ignore flights pages<br>
+					<em>(Means don't use Google Container on Google sites with a path of <code>/flights</code>.)</em>
+				</label>
+			</p>
 
-		<p>
-			<label>
-				<input type="checkbox" id="ignore_searchpages" value="1">
-				Ignore search pages<br>
-				<em>(Means don't use Google Container on Google sites with a path of <code>/search</code>.)</em>
-			</label>
-		</p>
-
-		<p>
-			<label>
-				<input type="checkbox" id="ignore_maps" value="1">
-				Ignore maps pages<br>
-				<em>(Means don't use Google Container on Google sites with a path of <code>/maps</code>.)</em>
-			</label>
-		</p>
-
-		<p>
-			<label>
-				<input type="checkbox" id="ignore_flights" value="1">
-				Ignore flights pages<br>
-				<em>(Means don't use Google Container on Google sites with a path of <code>/flights</code>.)</em>
-			</label>
-		</p>
-
-		<button type="submit">Save settings</button>
-
-		<hr>
-
+			<button class="btn" type="submit">Save settings</button>
+		</div>	
+		
+		<!-- This fun has not enabled yet
+		<div class="brdr">
+		<h3> Expection List </h3>
+		<p>Example: http://example1.com, http://example2.com, http://example3.com</p>
+		<textarea rows="20" cols="60" id="elinput"></textarea> <br>
+		<button class="btn" id="elbtn"> Submit </button>
+		</div>
+		-->
+		
 	</form>
 	<script src="options.js"></script>
 </body>

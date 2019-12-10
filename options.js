@@ -28,3 +28,31 @@ function onOptionsPageLoaded()
 
 document.addEventListener("DOMContentLoaded", onOptionsPageLoaded);
 document.querySelector("form").addEventListener("submit", onOptionsPageSave);
+
+// ----------------------------------------------------------------------------------------------------
+
+/* This fun has not enabled yet
+// Set values
+document.getElementById('elbtn').addEventListener('click', function(){
+	//alert(document.getElementById('elinput').value)
+	//browser.storage.local.set({elinput: sd})
+	browser.storage.local.set({
+	  exlist:  document.getElementById('elinput').value
+	})
+})
+
+
+// Get and display values
+let gettingItem = browser.storage.local.get("exlist");
+gettingItem.then(onGot, onError);
+
+function onGot(item) {
+  //console.log(item.exlist);  
+  if(item.exlist) {
+	  document.getElementById("elinput").value = item.exlist;
+  }   
+}
+
+function onError(error) {
+  console.log(`Error: ${error}`);
+} */

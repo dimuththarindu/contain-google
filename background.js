@@ -297,9 +297,49 @@ function customExceptionList(url) {
 	cel[11] = "https://www.google.com/drive/";
 	cel[12] = "https://drive.google.com";
 	
-	if(cel.includes(url)) {
-		return true;
+	// if(cel.includes(url)) {
+		// return true;
+	// }
+	
+	/* This fun has not enabled yet
+	// Get and display values
+	let gettingItem = browser.storage.local.get("exlist");
+	gettingItem.then(onGot, onError);
+
+	function onGot(item) {
+		//console.log("item.exlist: "+ item.exlist);
+
+		if(item.exlist) {
+			let aeurl = item.exlist.toLocaleString();
+			//console.log("aeurl: " + aeurl);
+			var cel = aeurl.split(",");
+
+			console.log("Testing URL: " + url);
+			console.log("All exceptional URLs: " + cel.toString());
+			console.log("No of exceptional URLs: " + cel.length);
+
+			for (const str of cel) {
+				console.log("checking: "+ str.trim());				
+				if(url.startsWith(str.trim()))
+				{
+					console.log("URL start with "+ str);
+					return 200;
+				}
+			}
+		} 
+	} 
+
+	function onError(error) {
+	  console.log(`Error: ${error}`);
+	} */
+	
+	for (const str of cel) {
+		if(url.startsWith(str.trim()))
+		{
+			return true;
+		}
 	}
+			
 	return false;
 }
 
@@ -309,7 +349,7 @@ function shouldContainInto (url, tab) {
     return false;
   }
   
-  if(customExceptionList(url.startsWith)) {
+  if(customExceptionList(url)) {
 	  return false;
   }
 
