@@ -296,6 +296,8 @@ function customExceptionList(url) {
 	cel[10] = "https://www.google.lk/maps";
 	cel[11] = "https://www.google.com/drive/";
 	cel[12] = "https://drive.google.com";
+	cel[13] = "https://learndigital.withgoogle.com";
+	cel[14] = "​https://lh3.googleusercontent.com";
 	
 	// if(cel.includes(url)) {
 		// return true;
